@@ -1,0 +1,15 @@
+<h1 class="mt-4 mb-4 ms-4 me-4">New restaurant</h1>
+
+<div class="mt-4 mb-4 ms-4 me-4">
+  <%= simple_form_for [@restaurant] do |f| %>
+    <%= f.input :name, label: 'Name', error: 'Restaurant name is mandatory, please specify one'%>
+    <%= f.input :address %>
+    <%= f.input :phone_number %>
+    <%= f.input :category, :collection => CATEGORY %>
+    <%= f.submit "Create restaurant", class: "btn btn-success mt-4" %>
+  <% end %>
+</div>
+
+<div>
+  <%= link_to "Back to all restaurants", restaurants_path, class:"mt-4 mb-4 ms-4 me-4" %>
+</div>
